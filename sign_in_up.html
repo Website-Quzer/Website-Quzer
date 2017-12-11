@@ -6,6 +6,8 @@
      <link rel="icon" href="images/title_png/logo.png">
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
      <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
+     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+     <link rel="stylesheet" href="assets/css/Footer-with-social-icons.css">
      <style media="screen">
       body{
         background-color: #EEEEEE;
@@ -18,7 +20,9 @@
          width: 100px;
          height:100px;
          margin-top:25px;
+         transition: height .4s linear,width .4s linear;
        }
+
        #header{
           font-family: 'Berkshire Swash', cursive;
           font-size: 200%;
@@ -45,14 +49,23 @@
          width: 98%;
          margin-right: 1%;
        }
+       #logo_image:hover{
+        width: 150px;
+        height: 150px;
+        transition: width .3s linear,height .3s linear;
+
+       }
+       #myFooter{
+         margin-top: 1%;
+       }
      </style>
   </head>
   <body>
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-12 center_content">
-          <img src="images/body_images/logo.png" alt="Quzer logo" id="logo_image">
+          <a href="#"> <img src="images/body_images/logo.png" alt="Quzer logo" id="logo_image"> </a>
         </div>
       </div>
       <div class="row">
@@ -78,7 +91,7 @@
                 <p>Password:</p>
                 <input type="password" name="username" value="" class="form-control">
                 <p><input type="checkbox" name="" value="" checked> Remember me</p>
-                <button type="button" name="button" class="btn btn-success center_content" id="submit_button">Submit</button>
+                <button type="button" name="button" class="btn btn-success center_content" id="submit_button" onclick="check_submit_si">Submit</button>
                 <br>
                 <br>
               </form>
@@ -86,13 +99,16 @@
             <div class="tab-pane fade" id="nav-sign_up">
               <form class="form-action" action="index.html" method="post">
                 <p>Email id:</p>
-                <input type="text" name="username" value="" class="form-control">
+                <input type="text" name="username" value="" class="form-control" id="user_id">
+                <p id="user_id_p"></p>
                 <p>Create a password:</p>
-                <input type="password" name="username" value="" class="form-control">
+                <input type="password" name="username" value="" class="form-control" id="pass">
+                <p id="pass_p"></p>
                 <p>Confirm your password</p>
-                <input type="password" name="username" value="" class="form-control">
+                <input type="password" name="username" value="" class="form-control" id="c_pass">
+                <p id="c_pass_p"></p>
                 <p><input type="checkbox" name="" value="" checked> Remember me</p>
-                <button type="button" name="button" class="btn btn-success center_content" id="submit_button">Submit</button>
+                <button type="button" name="button" class="btn btn-success center_content" id="submit_button" onclick="check_submit_su">Submit</button>
                 <br>
                 <br>
               </form>
@@ -101,12 +117,73 @@
 
         </div>
       </div>
+
+      <footer id="myFooter">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 myCols">
+                    <h5>Get started</h5>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Sign up</a></li>
+                        <li><a href="#">Best Questions</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>About us</h5>
+                    <ul>
+                        <li><a href="#">Company Information</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Reviews</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Support</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Help desk</a></li>
+                        <li><a href="#">Forums</a></li>
+                    </ul>
+                </div>
+                <div class="col-sm-3 myCols">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="social-networks">
+            <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
+            <a href="#" class="facebook"><i class="fa fa-facebook-official"></i></a>
+            <a href="#" class="google"><i class="fa fa-google-plus"></i></a>
+            <a href="#" class="github"> <i class="fa fa-github"></i></a>
+        </div>
+        <div class="footer-copyright">
+            <p>2018 Quzer </p>
+        </div>
+    </footer>
     </div>
 
 
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script type="text/javascript">
+          function check_submit_su() {
 
+            var user_name = document.getElementById('user_id').input;
+            var user_pass = document.getElementById('pass').input;
+            var user_c_pass = document.getElementById('c_pass').input;
+
+            window.console.log(''+username +' ' +user_pass+' '+user_c_pass);
+          }
+          function check_submit_si() {
+
+          }
+        </script>
   </body>
 </html>
