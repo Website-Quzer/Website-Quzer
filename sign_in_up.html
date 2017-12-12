@@ -87,11 +87,12 @@
             <div class="tab-pane fade show active" id="nav-sign_in">
               <form class="form-action" action="index.html" method="post">
                 <p>Username or email address:</p>
-                <input type="text" name="username" value="" class="form-control">
+                <input type="text" name="username" value="" class="form-control" id="user_id_si">
                 <p>Password:</p>
-                <input type="password" name="username" value="" class="form-control">
+                <input type="password" name="username" value="" class="form-control" id="pass_id_si">
+                <p><button type="button" class="btn btn-primary" onclick="toggle_pass_si()"> <i class="fa fa-eye-slash" aria-hidden="true" id="toggle_icon_si"></i></button></p>
                 <p><input type="checkbox" name="" value="" checked> Remember me</p>
-                <button type="button" name="button" class="btn btn-success center_content" id="submit_button" onclick="check_submit_si">Submit</button>
+                <button type="button" name="button" class="btn btn-success center_content" id="submit_button" onclick="check_submit_si()">Submit</button>
                 <br>
                 <br>
               </form>
@@ -102,11 +103,12 @@
                 <input type="text" name="username" value="" class="form-control" id="user_id">
                 <p id="user_id_p"></p>
                 <p>Create a password:</p>
-                <input type="password" name="username" value="" class="form-control" id="pass">
+                <input type="password" name="username" value="" class="form-control" id="pass_id_su">
                 <p id="pass_p"></p>
                 <p>Confirm your password</p>
-                <input type="password" name="username" value="" class="form-control" id="c_pass">
+                <input type="password" name="username" value="" class="form-control" id="pass_id_c_su">
                 <p id="c_pass_p"></p>
+                <p><button type="button" class="btn btn-primary" onclick="toggle_pass_su()"> <i class="fa fa-eye-slash" aria-hidden="true" id="toggle_icon_su"></i></button></p>
                 <p><input type="checkbox" name="" value="" checked> Remember me</p>
                 <button type="button" name="button" class="btn btn-success center_content" id="submit_button" onclick="check_submit_su">Submit</button>
                 <br>
@@ -175,15 +177,50 @@
         <script type="text/javascript">
           function check_submit_su() {
 
-            var user_name = document.getElementById('user_id').input;
-            var user_pass = document.getElementById('pass').input;
-            var user_c_pass = document.getElementById('c_pass').input;
+            var user_name = document.getElementById('user_id').value;
+            var user_pass = document.getElementById('pass').value;
+            var user_c_pass = document.getElementById('c_pass').value;
 
             window.console.log(''+username +' ' +user_pass+' '+user_c_pass);
           }
           function check_submit_si() {
+            var user_name = document.getElementById('user_id_si').value;
+            var user_pass = document.getElementById('pass_id_si').value;
+
+            if(user_name==undefined || user_pass== undefined){
+              alert('undef');
+            }
 
           }
+          function toggle_pass_si() {
+            var class_name = document.getElementById('toggle_icon_si').className;
+
+
+              if(class_name == "fa fa-eye") {var typ="password";
+                                                  var ad = "fa-eye-slash";
+                                }
+              else {                            var typ="text";
+                                              var ad = "fa-eye";
+                                                         }
+            document.getElementById('pass_id_si').type = typ;
+            document.getElementById('toggle_icon_si').className = "fa " + ad;
+          }
+
+          function toggle_pass_su() {
+            var class_name = document.getElementById('toggle_icon_su').className;
+
+
+              if(class_name == "fa fa-eye") {var typ="password";
+                                                  var ad = "fa-eye-slash";
+                                }
+              else {                            var typ="text";
+                                              var ad = "fa-eye";
+                                                         }
+            document.getElementById('pass_id_su').type = typ;
+            document.getElementById('pass_id_c_su').type = typ;
+            document.getElementById('toggle_icon_su').className = "fa " + ad;
+          }
+
         </script>
   </body>
 </html>
