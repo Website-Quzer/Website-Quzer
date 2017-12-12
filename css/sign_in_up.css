@@ -1,0 +1,49 @@
+body{
+  background-color: #EEEEEE;
+}
+ .center_content{
+   text-align: center;
+   align-content: center;
+ }
+ #logo_image{
+   width: 100px;
+   height:100px;
+   margin-top:25px;
+   transition: height .4s linear,width .4s linear;
+ }
+
+ #header{
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 200%;
+ }
+ #signIn{
+   width: 48%;
+   float: right;
+
+ }
+ #signUp{
+   width: 48%;
+   float: left  ;
+
+ }
+ #main_form{
+   margin-top: 1%;
+ }
+ #main_form p{
+   margin-top: 2%;
+   font-weight: 450;
+ }
+ #submit_button{
+   margin-left: 1%;
+   width: 98%;
+   margin-right: 1%;
+ }
+ #logo_image:hover{
+  width: 150px;
+  height: 150px;
+  transition: width .3s linear,height .3s linear;
+
+ }
+ #myFooter{
+   margin-top: 1%;
+ }

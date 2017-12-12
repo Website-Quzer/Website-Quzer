@@ -8,57 +8,7 @@
      <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash" rel="stylesheet">
      <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
      <link rel="stylesheet" href="assets/css/Footer-with-social-icons.css">
-     <style media="screen">
-      body{
-        background-color: #EEEEEE;
-      }
-       .center_content{
-         text-align: center;
-         align-content: center;
-       }
-       #logo_image{
-         width: 100px;
-         height:100px;
-         margin-top:25px;
-         transition: height .4s linear,width .4s linear;
-       }
-
-       #header{
-          font-family: 'Berkshire Swash', cursive;
-          font-size: 200%;
-       }
-       #signIn{
-         width: 48%;
-         float: right;
-
-       }
-       #signUp{
-         width: 48%;
-         float: left  ;
-
-       }
-       #main_form{
-         margin-top: 1%;
-       }
-       #main_form p{
-         margin-top: 2%;
-         font-weight: 450;
-       }
-       #submit_button{
-         margin-left: 1%;
-         width: 98%;
-         margin-right: 1%;
-       }
-       #logo_image:hover{
-        width: 150px;
-        height: 150px;
-        transition: width .3s linear,height .3s linear;
-
-       }
-       #myFooter{
-         margin-top: 1%;
-       }
-     </style>
+     <link rel="stylesheet" href="css/sign_in_up.css">
   </head>
   <body>
 
@@ -174,53 +124,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script type="text/javascript">
-          function check_submit_su() {
+        <script type="text/javascript" src="js/sign_in.js"></script>
 
-            var user_name = document.getElementById('user_id').value;
-            var user_pass = document.getElementById('pass').value;
-            var user_c_pass = document.getElementById('c_pass').value;
-
-            window.console.log(''+username +' ' +user_pass+' '+user_c_pass);
-          }
-          function check_submit_si() {
-            var user_name = document.getElementById('user_id_si').value;
-            var user_pass = document.getElementById('pass_id_si').value;
-
-            if(user_name==undefined || user_pass== undefined){
-              alert('undef');
-            }
-
-          }
-          function toggle_pass_si() {
-            var class_name = document.getElementById('toggle_icon_si').className;
-
-
-              if(class_name == "fa fa-eye") {var typ="password";
-                                                  var ad = "fa-eye-slash";
-                                }
-              else {                            var typ="text";
-                                              var ad = "fa-eye";
-                                                         }
-            document.getElementById('pass_id_si').type = typ;
-            document.getElementById('toggle_icon_si').className = "fa " + ad;
-          }
-
-          function toggle_pass_su() {
-            var class_name = document.getElementById('toggle_icon_su').className;
-
-
-              if(class_name == "fa fa-eye") {var typ="password";
-                                                  var ad = "fa-eye-slash";
-                                }
-              else {                            var typ="text";
-                                              var ad = "fa-eye";
-                                                         }
-            document.getElementById('pass_id_su').type = typ;
-            document.getElementById('pass_id_c_su').type = typ;
-            document.getElementById('toggle_icon_su').className = "fa " + ad;
-          }
-
-        </script>
   </body>
 </html>
