@@ -75,6 +75,13 @@
 	color: #00aced;
 }
 
+#myFooter .whatsapp:hover{
+	color:#189D0E;
+}
+#myFooter .github:hover{
+	color:#000000;
+}
+
 @media screen and (max-width: 767px){
 	#myFooter {
 		text-align: center;

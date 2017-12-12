@@ -1,0 +1,20 @@
+#nav_logo{
+  width: 35px;
+  height: 35px;
+}
+.item_hover:hover{
+  color: red;
+}
+.container{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+#ques_inp{
+  margin-left: 3%;
+  margin-right: 3%;
+  width: 45%;
+}
+#welcome_header{
+  padding: 1%;
+  background-color: #E0E0E0;
+}
