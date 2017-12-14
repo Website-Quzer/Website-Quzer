@@ -1,21 +1,21 @@
 <?php
 $email = $_POST['email'];
-$pass = $_POST['passward'];
+$pass = $_POST['password'];
 
-$con = mysqli_connect('localhost','root');
+$con = mysqli_connect('localhost','id3968255_member_quzer','7485116');
 mysqli_select_db($con , 'id3968255_quzer');
 
-$check = "select * from user where username='$name'";
+$check = "select * from user where email='$email'";
 $result=mysqli_query($con , $check);
 $row=mysqli_num_rows($result);
 if ($row==0) {
-	$q = "INSERT INTO user( email , password, date) VALUES('$pass', '$email', now());";
+	$q = "INSERT INTO user( email , password, date) VALUES('$email','$pass',now());";
 	mysqli_query($con ,$q);
 	echo "<script>alert('Congrats.....Successfully Sign up. Please Sign in to continue !!!');
 	window.location.href='sign_in_up.html';</script>";
 }
 else {
-	echo "<script>alert('Username already exists , Please try with a different username!');
+	echo "<script>alert('Email Id already exists , Please try with a different Email Id!');
 	window.location.href='sign_in_up.html';</script>";
 }
 mysqli_close($con);
