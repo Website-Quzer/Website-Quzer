@@ -4,7 +4,7 @@ $login_input_name = $_POST['email'];
 $login_input_password = $_POST['password'];
 
 //connection start with database
-$con = mysqli_connect('localhost','id3968255_member_quzer','7485116');
+$con = mysqli_connect('localhost','******','******');
 mysqli_select_db($con , 'id3968255_quzer');
 
 //Query : for check username and passward in database

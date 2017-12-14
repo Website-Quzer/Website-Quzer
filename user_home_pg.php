@@ -5,13 +5,6 @@ session_start();
 
  }
  else {
-//connection start with database
-$con = mysqli_connect('localhost','id3968255_member_quzer','7485116');
-mysqli_select_db($con , 'id3968255_quzer');
-
-//Query : for check username and passward in database
-
-//we can additional features
 
     echo "<!DOCTYPE html>
 <html>

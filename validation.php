@@ -2,7 +2,7 @@
 $email = $_POST['email'];
 $pass = $_POST['password'];
 
-$con = mysqli_connect('localhost','id3968255_member_quzer','7485116');
+$con = mysqli_connect('localhost','******','******');
 mysqli_select_db($con , 'id3968255_quzer');
 
 $check = "select * from user where email='$email'";
