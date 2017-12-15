@@ -53,7 +53,7 @@
               <form class="form-action" action="validation.php" method="post">
                 <p>Name:</p>
                 <input type="text" name="name" value="" class="form-control" id="name_id_su">
-                <p> <!-- TODO: show user name related errors --> </p>
+                <p id="name_id_su_p"> <!-- TODO: show user name related errors --> </p>
                 <p>Email id:</p>
                 <input type="email" name="email" value="" class="form-control" id="user_id">
                 <p id="user_id_p"> <!-- TODO: show email alreday exist --> </p>
@@ -61,7 +61,7 @@
                 <input type="password" name="password" value="" class="form-control" id="pass_id_su">
                 <p id="pass_p"> <!-- TODO: show pass related errors --> </p>
                 <p>Confirm your password:</p>
-  <!-- TODO: check name guys here -->              <input type="password" name="username" value="" class="form-control" id="pass_id_c_su">
+  <!-- TODO: check name guys here -->              <input type="password" name="confirm_password" value="" class="form-control" id="pass_id_c_su">
                 <p id="c_pass_p"><!-- TODO: show pass related errors --></p>
                 <p><button type="button" class="btn btn-primary" onclick="toggle_pass_su()"> <i class="fa fa-eye-slash" aria-hidden="true" id="toggle_icon_su"></i></button></p>
                 <p><input type="checkbox" name="" value="" checked> Remember me</p>
