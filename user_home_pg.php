@@ -33,7 +33,7 @@ session_start();
                       <a class=\"nav-link\" href=\"#\">Home <span class=\"sr-only\">(current)</span></a>
                     </li>
                     <li class=\"nav-item\">
-                      <a class=\"nav-link\" href=\"#\"> <label for=\"ques_inp\">Post</label></a>
+                      <a class=\"nav-link\" href=\"related_ques_list.php\"> <label>All Posts</label></a>
                     </li>
                     <li class=\"nav-item dropdown\" id=\"nav_more\">
                       <a class=\"nav-link dropdown-toggle\" href=\"#\" id=\"navbarDropdown\" role=\"button\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">
@@ -60,9 +60,9 @@ session_start();
                   <h2>Welcome User</h2>
               </div>
               <div class=\"col-6\">
-                <form class=\"form-inline\" action=\"index.html\" method=\"post\">
+                <form class=\"form-inline\" action=\"save_db.php\" method=\"post\">
                   <input type=\"text\" class=\"form-control\" name=\"user_query\" value=\"\" placeholder=\"Ask your question here\" id=\"ques_inp\" onfocusin=\"askFcs()\" onfocusout=\"askFcsOut()\">
-                  <button type=\"button\" name=\"button\" class=\"btn btn-success\">Ask</button>
+                  <button type=\"submit\" name=\"button\" class=\"btn btn-success\">Ask</button>
                 </form>
               </div>
             </div>

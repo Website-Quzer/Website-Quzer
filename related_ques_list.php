@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION['email'])) {
+  header("location:sign_in_up.html");
+}
+$con = mysqli_connect('localhost','******','******');
+mysqli_select_db($con , 'id3968255_quzer');
+$q_all = "select * from posts";
+$post = mysqli_query($con ,$q_all);
+$n = mysqli_num_rows($post); ?>
 <!DOCTYPE html>
 <html>
   <head>
@@ -68,7 +78,7 @@
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#"> <label for="ques_inp">Post</label></a>
+                  <a class="nav-link" href="user_home_pg.php"> <label >Post Question</label></a>
                 </li>
                 <li class="nav-item dropdown" id="nav_more">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -90,100 +100,60 @@
             </div>
       </nav>
       <div class="container">
-        <div class="row ques_col">
-              <div class="col-1">
-                <div class="container ">
-                  <div class="row justify-content-center justify-self-center ht_cont">
+        <?php 
+          for ($i=0; $i<$n; $i++){
+            $data = mysqli_fetch_array($post,MYSQLI_NUM);
+            if ($i>=$n-10){
+            $user = explode("@",$data[2])[0];
+              echo "<div class=\"row ques_col\">
+              <div class=\"col-1\">
+                <div class=\"container \">
+                  <div class=\"row justify-content-center justify-self-center ht_cont\">
                     <p>12</p>
                   </div>
-                  <div class="row justify-content-center justify-self-center ht_cont">
-                    <p><i class="fa fa-thumbs-up" aria-hidden="true"></i></p>
+                  <div class=\"row justify-content-center justify-self-center ht_cont\">
+                    <p><i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i></p>
                   </div>
                 </div>
               </div>
-              <div class="col-1">
-                <div class="container">
-                  <div class="row justify-content-center ht_cont">
+              <div class=\"col-1\">
+                <div class=\"container\">
+                  <div class=\"row justify-content-center ht_cont\">
                     <p>12</p>
                   </div>
-                  <div class="row justify-content-center ht_cont">
-                    <p><i class="fa fa-thumbs-down" aria-hidden="true"></i></p>
+                  <div class=\"row justify-content-center ht_cont\">
+                    <p><i class=\"fa fa-thumbs-down\" aria-hidden=\"true\"></i></p>
                   </div>
                 </div>
               </div>
-              <div class="col-1">
-                <div class="container">
-                  <div class="row justify-content-center ht_cont">
+              <div class=\"col-1\">
+                <div class=\"container\">
+                  <div class=\"row justify-content-center ht_cont\">
                     <p>12</p>
                   </div>
-                  <div class="row justify-content-center ht_cont">
-                    <p><i class="fa fa-eye" aria-hidden="true"></i></p>
+                  <div class=\"row justify-content-center ht_cont\">
+                    <p><i class=\"fa fa-eye\" aria-hidden=\"true\"></i></p>
                   </div>
                 </div>
               </div>
-              <div class="col-8 offset-1">
-                  <div class="container">
-                    <div class="row">
-                      <a href="#"><p class="ques_para">nbdhvcfhdvccccccccccccccccccccccccccc</p></a>
+              <div class=\"col-8 offset-1\">
+                  <div class=\"container\">
+                    <div class=\"row\">
+                      <a href=\"#\"><p class=\"ques_para\">$data[1]</p></a>
                     </div>
-                    <div class="row" >
-                      <div class="col-6">
-                        <p class="answer">Best ans here</p>
+                    <div class=\"row\" >
+                      <div class=\"col-6\">
+                        <p class=\"answer\">$data[3]</p>
                       </div>
-                      <div class="col-6">
-                          <p class="best_ans">best answer by jmayank</p>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-        </div>
-        <div class="row ques_col">
-              <div class="col-1">
-                <div class="container ">
-                  <div class="row justify-content-center justify-self-center ht_cont">
-                    <p>12</p>
-                  </div>
-                  <div class="row justify-content-center justify-self-center ht_cont">
-                    <p><i class="fa fa-thumbs-up" aria-hidden="true"></i></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="container">
-                  <div class="row justify-content-center ht_cont">
-                    <p>12</p>
-                  </div>
-                  <div class="row justify-content-center ht_cont">
-                    <p><i class="fa fa-thumbs-down" aria-hidden="true"></i></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-1">
-                <div class="container">
-                  <div class="row justify-content-center ht_cont">
-                    <p>12</p>
-                  </div>
-                  <div class="row justify-content-center ht_cont">
-                    <p><i class="fa fa-eye" aria-hidden="true"></i></p>
-                  </div>
-                </div>
-              </div>
-              <div class="col-8 offset-1">
-                  <div class="container">
-                    <div class="row">
-                      <a href="#"><p class="ques_para">nbdhvcfhdvccccccccccccccccccccccccccc</p></a>
-                    </div>
-                    <div class="row" >
-                      <div class="col-6">
-                        <p class="answer">Best ans here</p>
-                      </div>
-                      <div class="col-6">
-                          <p class="best_ans">best answer by jmayank</p>
+                      <div class=\"col-6\">
+                          <p class=\"best_ans\">$user</p>
                       </div>
                     </div>
                   </div>
               </div>
-        </div>
+        </div>" ;}}
+        mysqli_close($con);
+         ?>
       </div>
     </div>
 
