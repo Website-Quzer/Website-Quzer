@@ -1,0 +1,44 @@
+.main_ques{
+
+  font-family: 'Itim', cursive;
+
+}
+.container .row button{
+  color: #fff;
+}
+textarea{
+  border: 3px black solid;
+}
+.answer{
+  font-family: 'Merienda', cursive;
+  font-weight: 300;
+  font-size: 110%;
+}
+.no_of_likes{
+  margin-top: 10px;
+  font-weight: bold;
+}
+.by_para{
+  width: 100%;
+  font-weight: bold;
+  font-style: italic;
+  margin-right: 5%;
+}
+.low_margin{
+  margin-top: 0px;
+  padding-top: 0px;
+}
+.answer_row{
+  border-top: 1px grey solid;
+  border-bottom:1px grey solid;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+@media (max-width:450px) {
+  .answer{
+    font-size: 90%;
+  }
+}
