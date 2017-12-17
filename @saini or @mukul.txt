@@ -1,0 +1,3 @@
+*)control add_yours_answer via js to toggle textarea
+assign appropriate colors to sec_buttons if reqd
+*)add js so that add that all text of button is hidden when screen size is smaller.
