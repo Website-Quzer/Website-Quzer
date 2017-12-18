@@ -59,7 +59,7 @@ $n = mysqli_num_rows($ans_q); ?>
            </form>
          </div>
        </div>
-       <?php 
+       <?php
        for ($i = 0; $i<$n; $i++){
         $user_a = mysqli_fetch_array($ans_q,MYSQLI_NUM);
         $user = explode("@",$user_a[2])[0];
@@ -77,9 +77,8 @@ $n = mysqli_num_rows($ans_q); ?>
         </div>
         <div class=\"col-9 offset-1\">
           <div class=\"row\">
-            <p class=\"answer\">$user_a[1]     <p> <a href=\"#\" class=\"share_link\">Share</a></p>
-            </p>
-
+            <p class=\"answer\">$user_a[1] </p>
+            <p> <a href=\"#\" class=\"share_link\">Share</a></p> 
           </div>
           <div class=\"row low_margin\">
             <p class=\"text-right by_para low_margin\">By: $user &nbsp;&nbsp;&nbsp;last modified</p>
