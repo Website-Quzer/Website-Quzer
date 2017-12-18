@@ -5,7 +5,7 @@ if (!isset($_SESSION['email'])) {
 }
 $con = mysqli_connect('localhost','******','******');
 mysqli_select_db($con , 'id3968255_quzer');
-$q_all = "select * from posts";
+$q_all = "select * from posts where q_id_for_ans IS NULL";
 $post = mysqli_query($con ,$q_all);
 $n = mysqli_num_rows($post); ?>
 <!DOCTYPE html>
@@ -139,7 +139,7 @@ $n = mysqli_num_rows($post); ?>
               <div class=\"col-8 offset-1\">
                   <div class=\"container\">
                     <div class=\"row\">
-                      <a href=\"#\"><p class=\"ques_para\">$data[1]</p></a>
+                      <a href=\"answers.php?qid=$data[0]\"><p class=\"ques_para\">$data[1]</p></a>
                     </div>
                     <div class=\"row\" >
                       <div class=\"col-6\">
