@@ -11,7 +11,7 @@ $q = "select * from posts where Id = $qs";
 $q_query = mysqli_query($con ,$q);
 $qus = mysqli_fetch_array($q_query,MYSQLI_NUM);
 //answers
-$ans = "select * from posts where q_id_for_ans = $qs";
+$ans = "select * from posts where q_id_for_ans = $qs ORDER BY likes-dislikes DESC";
 $ans_q = mysqli_query($con,$ans);
 $n = mysqli_num_rows($ans_q); ?>
 <!DOCTYPE html>
@@ -39,8 +39,8 @@ $n = mysqli_num_rows($ans_q); ?>
        </div>
        <div class="row" style="margin-top:5px;">
          <div class="col-6">
-           <button type="button" name="like" class="btn btn-success btn-sm" ><i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;Like</button>
-           <button type="button" name="dislike" class="btn btn-danger btn-sm" ><i class="fa fa-thumbs-down" aria-hidden="true"></i>&nbsp;Dislike</button>
+           <button type="button" name="like" class="btn btn-success btn-sm" onclick="location.href='like.php?qid=<?php echo $qs?>&aid=-1&type=1'"><i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;<?php echo $qus[6] ?> Like</button>
+           <button type="button" name="dislike" class="btn btn-danger btn-sm" onclick="location.href='like.php?qid=<?php echo $qs?>&aid=-1&type=2'"><i class="fa fa-thumbs-down" aria-hidden="true"></i>&nbsp;<?php echo $qus[7] ?> Dislike</button>
            <button type="button" name="dislike" class="btn btn-default btn-sm" style="background-color:purple;"><i class="fa  fa-eye" aria-hidden="true"></i>&nbsp;<?php echo $qus[5] ?> views</button>
          </div>
          <div class="col-6 justify-content-right text-right">
@@ -62,22 +62,23 @@ $n = mysqli_num_rows($ans_q); ?>
        <?php 
        for ($i = 0; $i<$n; $i++){
         $user_a = mysqli_fetch_array($ans_q,MYSQLI_NUM);
+        $lk = $user_a[6]-$user_a[7];
         $user = explode("@",$user_a[2])[0];
         echo  "<div class=\"row answer_row\">
         <div class=\"col-1\">
             <div class=\"row\">
-              <button type=\"button\" name=\"button\" class=\"btn btn-success\"><i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i></button>
+              <button type=\"button\" name=\"button\" class=\"btn btn-success\" onclick=\"location.href='like.php?qid=$qus[0]&aid=$user_a[0]&type=1'\"><i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i></button>
             </div>
             <div class=\"row text-center\">
-              <p class=\"no_of_likes\">123</p>
+              <p class=\"no_of_likes\">$lk</p>
             </div>
             <div class=\"row\">
-              <button type=\"button\" name=\"button\" class=\"btn btn-danger\"><i class=\"fa fa-thumbs-down\" aria-hidden=\"true\"></i></button>
+              <button type=\"button\" name=\"button\" class=\"btn btn-danger\" onclick=\"location.href='like.php?qid=$qus[0]&aid=$user_a[0]&type=2'\"><i class=\"fa fa-thumbs-down\" aria-hidden=\"true\"></i></button>
             </div>
         </div>
         <div class=\"col-9 offset-1\">
           <div class=\"row\">
-            <p class=\"answer\">$user_a[1]<p> <a href=\"#\" class=\"share_link\">Share</a></p>
+            <p class=\"answer\">$user_a[1]<p> <a href=\"#\" class=\"share_link\">&nbsp;&nbsp;&nbsp;Share</a></p>
             </p>
 
           </div>
