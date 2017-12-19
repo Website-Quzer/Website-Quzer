@@ -5,7 +5,7 @@ if (!isset($_SESSION['email'])) {
 }
 $con = mysqli_connect('localhost','******','******');
 mysqli_select_db($con , 'id3968255_quzer');
-$q_all = "select * from posts where q_id_for_ans IS NULL";
+$q_all = "select * from posts where q_id_for_ans IS NULL ORDER BY date DESC";
 $post = mysqli_query($con ,$q_all);
 $n = mysqli_num_rows($post); ?>
 <!DOCTYPE html>
@@ -103,13 +103,13 @@ $n = mysqli_num_rows($post); ?>
         <?php 
           for ($i=0; $i<$n; $i++){
             $data = mysqli_fetch_array($post,MYSQLI_NUM);
-            if ($i>=$n-10){
+            if ($i>=10-$n){
             $user = explode("@",$data[2])[0];
               echo "<div class=\"row ques_col\">
               <div class=\"col-1\">
                 <div class=\"container \">
                   <div class=\"row justify-content-center justify-self-center ht_cont\">
-                    <p>12</p>
+                    <p>$data[6]</p>
                   </div>
                   <div class=\"row justify-content-center justify-self-center ht_cont\">
                     <p><i class=\"fa fa-thumbs-up\" aria-hidden=\"true\"></i></p>
@@ -119,7 +119,7 @@ $n = mysqli_num_rows($post); ?>
               <div class=\"col-1\">
                 <div class=\"container\">
                   <div class=\"row justify-content-center ht_cont\">
-                    <p>12</p>
+                    <p>1$data[7]</p>
                   </div>
                   <div class=\"row justify-content-center ht_cont\">
                     <p><i class=\"fa fa-thumbs-down\" aria-hidden=\"true\"></i></p>
@@ -129,7 +129,7 @@ $n = mysqli_num_rows($post); ?>
               <div class=\"col-1\">
                 <div class=\"container\">
                   <div class=\"row justify-content-center ht_cont\">
-                    <p>12</p>
+                    <p>$data[5]</p>
                   </div>
                   <div class=\"row justify-content-center ht_cont\">
                     <p><i class=\"fa fa-eye\" aria-hidden=\"true\"></i></p>
@@ -139,7 +139,7 @@ $n = mysqli_num_rows($post); ?>
               <div class=\"col-8 offset-1\">
                   <div class=\"container\">
                     <div class=\"row\">
-                      <a href=\"answers.php?qid=$data[0]\"><p class=\"ques_para\">$data[1]</p></a>
+                      <a href=\"like.php?qid=$data[0]&aid=-1&type=0\"><p class=\"ques_para\">$data[1]</p></a>
                     </div>
                     <div class=\"row\" >
                       <div class=\"col-6\">
