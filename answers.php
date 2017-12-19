@@ -41,7 +41,7 @@ $n = mysqli_num_rows($ans_q); ?>
          <div class="col-6">
            <button type="button" name="like" class="btn btn-success btn-sm" ><i class="fa fa-thumbs-up" aria-hidden="true"></i>&nbsp;Like</button>
            <button type="button" name="dislike" class="btn btn-danger btn-sm" ><i class="fa fa-thumbs-down" aria-hidden="true"></i>&nbsp;Dislike</button>
-           <button type="button" name="dislike" class="btn btn-default btn-sm" style="background-color:purple;"><i class="fa  fa-eye" aria-hidden="true"></i>&nbsp;views</button>
+           <button type="button" name="dislike" class="btn btn-default btn-sm" style="background-color:purple;"><i class="fa  fa-eye" aria-hidden="true"></i>&nbsp;<?php echo $qus[5] ?> views</button>
          </div>
          <div class="col-6 justify-content-right text-right">
            <button type="button" name="flag_imp" class="btn btn-secondary btn-sm" ><i class="fa fa-flag" aria-hidden="true"></i>&nbsp;Flag inappropriate</button>
@@ -77,12 +77,12 @@ $n = mysqli_num_rows($ans_q); ?>
         </div>
         <div class=\"col-9 offset-1\">
           <div class=\"row\">
-            <p class=\"answer\">$user_a[1]     <p> <a href=\"#\" class=\"share_link\">Share</a></p>
+            <p class=\"answer\">$user_a[1]<p> <a href=\"#\" class=\"share_link\">Share</a></p>
             </p>
 
           </div>
           <div class=\"row low_margin\">
-            <p class=\"text-right by_para low_margin\">By: $user &nbsp;&nbsp;&nbsp;last modified</p>
+            <p class=\"text-right by_para low_margin\">By: $user &nbsp;&nbsp;&nbsp;$user_a[3]</p>
             <p class=\"text-right by_para\">
               <button type=\"button\" name=\"flag_imp\" class=\"btn btn-secondary btn-xs\" ><i class=\"fa fa-flag\" aria-hidden=\"true\"></i></button>
               <button type=\"button\" name=\"dislike\" class=\"btn btn-secondary btn-xs\" ><i class=\"fa  fa-ban\" aria-hidden=\"true\"></i></button>
