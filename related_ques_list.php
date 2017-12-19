@@ -103,7 +103,7 @@ $n = mysqli_num_rows($post); ?>
         <?php 
           for ($i=0; $i<$n; $i++){
             $data = mysqli_fetch_array($post,MYSQLI_NUM);
-            if ($i>=$n-10){
+            if ($i>=10-$n){
             $user = explode("@",$data[2])[0];
               echo "<div class=\"row ques_col\">
               <div class=\"col-1\">
