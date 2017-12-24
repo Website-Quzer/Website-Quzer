@@ -1,0 +1,111 @@
+.jumbotron{
+  width: 100%;
+  height: 590px;
+  background-image: url(images/home_pg/back.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: white;
+}
+.color_hover:hover{
+  color: yellow;
+}
+.jumbotron h1{
+  font-size: 400%;
+  margin-bottom: 10px;
+}
+.jumbotron p {
+  font-size: 180%;
+}
+.button_cust{
+  margin-top: 50px;
+  width: 300px;
+  border-radius: 25px;
+  font-weight: bold;
+  font-size: 110%;
+}
+.button_cust:hover{
+  font-style: italic;
+  background: transparent;
+  font-size: 200%;
+  color: yellow;
+  transition: background .3s linear,color .3s linear,font-size .3s linear;
+}
+#logo_image{
+  width: 80px;
+  height: 80px;
+  transition: width .3s linear,height .3s linear;
+  margin-bottom: 40px;
+}
+
+#logo_image:hover{
+  width: 110px;
+  height: 110px;
+  transition: width .3s linear,height .3s linear;
+}
+.lighting_images{
+  width: 90%;
+  height: 300px;
+}
+.lighting_images_justify h2{
+  padding-top: 70px;
+}
+.lighting_images_row{
+  margin-top: 100px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+#lighting_images_justify_1{
+  background-color: #E2CEC3;
+}
+#lighting_images_justify_2{
+  background-color: #71A8DF;
+}
+#lighting_images_justify_3{
+  background-color: #3D3331;
+  color: white;
+}
+@media only screen and (max-width:500px) {
+  .jumbotron{
+    height: 400px;
+  }
+  .jumbotron h1{
+    font-size: 220%;
+  }
+  .jumbotron p {
+    font-size: 120%;
+  }
+  #logo_image{
+    width: 70px;
+    height: 70px;
+    transition: width .3s linear,height .3s linear;
+    margin-bottom: 25px;
+  }
+  #logo_image:hover{
+    width: 100px;
+    height: 100px;
+    transition: width .3s linear,height .3s linear;
+  }
+    .button_cust{
+      width: 70%;
+      border-radius: 25px;
+    }
+    .button_cust:hover{
+      font-size: 120%;
+    }
+    .lighting_images_row{
+      margin-top: 30px;
+    }
+    .lighting_images{
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+
+
+}
+
+
+
+footer{
+  margin-top: 50px;
+}
