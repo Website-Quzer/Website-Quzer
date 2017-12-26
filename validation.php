@@ -19,5 +19,4 @@ else {
 	window.location.href='sign_in_up.html';</script>";
 }
 mysqli_close($con);
-
 ?>
